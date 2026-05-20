@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hood-law-tooling"
+version = "0.1.0"
+description = "Python tooling for HOOD-LAW authority parsing, indexing, and export."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [
+  { name = "HOOD-LAW chambers" }
+]
+
+[project.scripts]
+hood-law-index = "hood_law_tooling.cli:index_main"
+hood-law-export = "hood_law_tooling.cli:export_main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
